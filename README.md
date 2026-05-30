@@ -4,6 +4,14 @@ A full-stack task management application built as a Java Full Stack take-home as
 
 ---
 
+## AI Workflow
+
+1. User enters a task title.
+2. Frontend sends request to /api/ai/generate-description.
+3. Spring Boot service calls Google Gemini API.
+4. Gemini generates a task description.
+5. Response is displayed in the task form.
+
 ## Features
 
 ### Authentication & Security
