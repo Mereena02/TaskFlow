@@ -47,19 +47,19 @@ public class SecurityConfig {
     }
 
     @Bean
-    CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        List<String> origins = Arrays.stream(corsProperties.getAllowedOrigins().split(","))
-                .map(String::trim)
-                .filter(s -> !s.isEmpty())
-                .toList();
-        configuration.setAllowedOrigins(origins);
-        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
-        configuration.setAllowedHeaders(List.of("*"));
-        configuration.setAllowCredentials(true);
+CorsConfigurationSource corsConfigurationSource() {
+    CorsConfiguration configuration = new CorsConfiguration();
 
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
-    }
+    configuration.setAllowedOriginPatterns(List.of("*"));
+    configuration.setAllowedMethods(List.of("*"));
+    configuration.setAllowedHeaders(List.of("*"));
+    configuration.setAllowCredentials(false);
+
+    UrlBasedCorsConfigurationSource source =
+            new UrlBasedCorsConfigurationSource();
+
+    source.registerCorsConfiguration("/**", configuration);
+
+    return source;
+}
 }
