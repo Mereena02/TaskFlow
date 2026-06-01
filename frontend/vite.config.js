@@ -6,8 +6,8 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
-      '/api': { target: 'https://taskflow-production-90a4.up.railway.app', changeOrigin: true },
-      '/actuator': { target: 'https://taskflow-production-90a4.up.railway.app', changeOrigin: true },
+      '/api': { target: 'http://localhost:8080', changeOrigin: true },
+      '/actuator': { target: 'http://localhost:8080', changeOrigin: true },
     },
   },
 });

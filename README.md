@@ -156,7 +156,7 @@ mvn spring-boot:run
 
 Backend runs on:
 
-https://taskflow-production-90a4.up.railway.app
+http://localhost:8080
 
 ### 5. Run Frontend
 
